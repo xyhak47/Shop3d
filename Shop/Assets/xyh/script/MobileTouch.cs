@@ -86,66 +86,12 @@ public class MobileTouch : MonoBehaviour
 
 
                 transform.LookAt(transform.position + viewVector, viewUp);
+                //UIHandler.Instance.text.text = "camera z = " + transform.eulerAngles.z;
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
 
                 //transform.Translate(new Vector3(Input.touches[0].deltaPosition.x * Time.deltaTime, Input.touches[0].deltaPosition.y * Time.deltaTime, 0));
             }
-            else if (Input.touches[0].phase == TouchPhase.Ended)
-            {
-                //log.text = "touch end";
-            }
-
-        }
-
-        /*       else if (Input.touchCount > 1)
-               {
-                   Vector2 nposition1 = new Vector2();
-                   Vector2 nposition2 = new Vector2();
-
-                   Vector2 deltaDis1 = new Vector2();
-                   Vector2 deltaDis2 = new Vector2();
-
-                   for (int i = 0; i < 2; i++)
-                   {
-                       Touch touch = Input.touches[i];
-                       if (touch.phase == TouchPhase.Ended)
-                           break;
-                       if (touch.phase == TouchPhase.Moved) 
-                       {
-
-                           if (i == 0)
-                           {
-                               nposition1 = touch.position;
-                               deltaDis1 = touch.deltaPosition;
-                           }
-                           else
-                           {
-                               nposition2 = touch.position;
-                               deltaDis2 = touch.deltaPosition;
-
-                               if (isEnlarge(oposition1, oposition2, nposition1, nposition2)) 
-                                   isforward = 1;
-                               else
-                                   isforward = -1;
-                           }
-                           oposition1 = nposition1;
-                           oposition2 = nposition2;
-                       }
-
-        *//*               float delta_scale = isforward * (Mathf.Abs(deltaDis2.x + deltaDis1.x) + Mathf.Abs(deltaDis1.y + deltaDis2.y));
-                       log.text = "delta_scale = " + delta_scale;
-
-                       if (Mathf.Abs(pre_delata_scale - delta_scale) < 0.5f)
-                       {
-                           return;
-                       }
-                       pre_delata_scale = delta_scale;
-                       Camera.main.fieldOfView += delta_scale;*//*
-                       //Camera.main.transform.Translate(isforward * Vector3.forward * Time.deltaTime * (Mathf.Abs(deltaDis2.x + deltaDis1.x) + Mathf.Abs(deltaDis1.y + deltaDis2.y)));
-                   }
-               }*/
+        } 
     }
-
-    //private float pre_delata_scale = 0;
-
 }
 
