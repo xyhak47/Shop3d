@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class SkyboxManager : MonoBehaviour
 {
-    [System.Serializable]
-    public enum Type
+    public static SkyboxManager Instance = null;
+    private void Awake()
     {
-         main
+        Instance = this;
     }
 
     [System.Serializable]
     public struct Skybox
     {
         public Material material;
-        public Type type;
+        public LayerType layertype;
     }
 
     public List<Skybox> List_Skybox;
@@ -23,13 +23,18 @@ public class SkyboxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Skybox main = List_Skybox.Find(skybox => skybox.type == Type.main);
-        RenderSettings.skybox = main.material;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ShowLayer(LayerType layer)
+    {
+        Skybox current_skybox = List_Skybox.Find(s => s.layertype == layer);
+        RenderSettings.skybox = current_skybox.material;
     }
 }

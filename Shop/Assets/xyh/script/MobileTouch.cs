@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class MobileTouch : MonoBehaviour
 {
+    public static MobileTouch Instance = null;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private float rotateSpeed = 5;
 
 
@@ -40,8 +46,17 @@ public class MobileTouch : MonoBehaviour
         viewUp = transform.up;
     }
 
+    public void ResetCamera()
+    {
+        viewVector = transform.forward;
+        viewUp = transform.up;
+    }
+
     void Update()
     {
+        //if (CameraViewPreset.Instance.lock_camera) return;
+
+
         if (Input.touchCount <= 0)
             return;
         if (Input.touchCount == 1) 
@@ -57,15 +72,17 @@ public class MobileTouch : MonoBehaviour
                 }
 
                 //log.text = "touch_delta.x = " + touch_delta.x + "  touch_delta.y = " + touch_delta.y;
+                viewVector = Quaternion.AngleAxis(touch_delta.x * rotateSpeed * Time.deltaTime, transform.up) * viewVector;
+                viewVector = Quaternion.AngleAxis(-touch_delta.y * rotateSpeed * Time.deltaTime, transform.right) * viewVector;
 
-                if (Mathf.Abs(touch_delta.x) >= Mathf.Abs(touch_delta.y))
-                {
-                    viewVector = Quaternion.AngleAxis(touch_delta.x * rotateSpeed * Time.deltaTime, transform.up) * viewVector;
-                }
-                else
-                {
-                    viewVector = Quaternion.AngleAxis(-touch_delta.y * rotateSpeed * Time.deltaTime, transform.right) * viewVector;
-                }
+                //if (Mathf.Abs(touch_delta.x) >= Mathf.Abs(touch_delta.y))
+                //{
+                //    viewVector = Quaternion.AngleAxis(touch_delta.x * rotateSpeed * Time.deltaTime, transform.up) * viewVector;
+                //}
+                //else
+                //{
+                //    viewVector = Quaternion.AngleAxis(-touch_delta.y * rotateSpeed * Time.deltaTime, transform.right) * viewVector;
+                //}
 
 
                 transform.LookAt(transform.position + viewVector, viewUp);

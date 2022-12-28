@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class FPSCamera : MonoBehaviour
 {
+    public static FPSCamera Instance = null;
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public float moveSpeed = 10;
     public float rotateSpeed = 10;
 
@@ -11,6 +17,7 @@ public class FPSCamera : MonoBehaviour
     Vector3 mouseDelta;
     Vector3 viewVector;
     Vector3 viewUp;
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +31,9 @@ public class FPSCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (CameraViewPreset.Instance.lock_camera) return;
+
+
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
         if (Input.mouseScrollDelta != Vector2.zero)
         {
@@ -49,6 +59,7 @@ public class FPSCamera : MonoBehaviour
                 viewVector = Quaternion.AngleAxis(-mouseDelta.y * rotateSpeed * Time.deltaTime, transform.right) * viewVector;
             }
 
+            transform.LookAt(transform.position + viewVector, viewUp);
 
         }
 
@@ -61,7 +72,6 @@ public class FPSCamera : MonoBehaviour
                     viewUp = Quaternion.AngleAxis(-10 * rotateSpeed * Time.deltaTime, transform.forward) * viewUp;
                 }*/
 
-        transform.LookAt(transform.position + viewVector, viewUp);
 
 
         /*        if (Input.GetKey("w"))
@@ -89,5 +99,9 @@ public class FPSCamera : MonoBehaviour
                     transform.position += (-transform.up * moveSpeed * Time.deltaTime);
                 }*/
 #endif
+    }
+
+    public void UpdateCamera()
+    {
     }
 }

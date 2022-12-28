@@ -13,29 +13,22 @@ public class JSHandler : MonoBehaviour
     }
 
     [DllImport("__Internal")]
-    private static extern void InitJS();
+    private static extern void JS_EnterGoodsDetailPage(string name, string id);
 
-    [DllImport("__Internal")]
-    private static extern void NikeShop();
 
     private void Start()
     {
-        InitJS();
     }
 
-
-    //test
-    public Text log;
-
-
-    public void onReceiveFromJS(string msg)
+    public void EnterGoodsDetailPage(string name, string id)
     {
-        log.text = "onReceiveFromJS = " + msg;
+        UIHandler.Instance.text.text = "EnterGoodsDetailPage = " + name + id;
+
+        JS_EnterGoodsDetailPage(name, id);
     }
 
-    public void Call_NikeShop()
+    public void CallFromJS(string data)
     {
-        NikeShop();
+        UIHandler.Instance.text.text = data;
     }
-
 }
