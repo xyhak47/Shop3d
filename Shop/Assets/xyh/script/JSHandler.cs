@@ -22,13 +22,13 @@ public class JSHandler : MonoBehaviour
 
     public void EnterGoodsDetailPage(string name, string id)
     {
-        UIHandler.Instance.text.text = "EnterGoodsDetailPage = " + name + id;
+        //UIHandler.Instance.text.text = "EnterGoodsDetailPage = " + name + id;
 
         JS_EnterGoodsDetailPage(name, id);
     }
 
     public void CallFromJS(string data)
     {
-        UIHandler.Instance.text.text = data;
+        UIHandler.Instance.DebugText("CallFromJS = " + data);
     }
 }

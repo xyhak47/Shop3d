@@ -13,13 +13,10 @@ public class MobileTouch : MonoBehaviour
 
     private float rotateSpeed = 5;
 
-
-    private int isforward;
                           
-    private Vector2 oposition1 = new Vector2();
-    private Vector2 oposition2 = new Vector2();
 
-    Vector2 m_screenPos = new Vector2();
+
+    Vector2 m_screenPos = Vector2.zero;
 
 
     Vector3 viewVector;

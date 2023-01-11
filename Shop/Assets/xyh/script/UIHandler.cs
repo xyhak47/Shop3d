@@ -29,4 +29,9 @@ public class UIHandler : MonoBehaviour
     {
         
     }
+
+    public void DebugText(string content)
+    {
+        text.text = content;
+    }
 }

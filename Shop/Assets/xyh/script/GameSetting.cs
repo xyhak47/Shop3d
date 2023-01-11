@@ -33,6 +33,9 @@ public class GameSetting : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //UIHandler.Instance.DebugText("game setting Start");
+        MusicPlayer.Instance.PlayBg(true);
+
         EnterLayer(current_layer);
     }
 
@@ -51,9 +54,21 @@ public class GameSetting : MonoBehaviour
     {
         current_layer = layer;
 
-        SpriteLayerManager.Instance.ShowLayer(layer);
-        SkyboxManager.Instance.ShowLayer(layer);
-        CameraViewPreset.Instance.ShowLayer(layer);  
+        // directly enter detail
+        if(layer == LayerType.main)
+        {        
+            SpriteLayerManager.Instance.ShowLayer(layer);
+        }
+        else
+        {
+            MusicPlayer.Instance.PlayBg(false);
+
+            EnterGoodsDetailPage();
+        }
+
+        //SpriteLayerManager.Instance.ShowLayer(layer);
+        //SkyboxManager.Instance.ShowLayer(layer);
+        //CameraViewPreset.Instance.ShowLayer(layer);  
     }
 
     public void EnterGoodsDetailPage()

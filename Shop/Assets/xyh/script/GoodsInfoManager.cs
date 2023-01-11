@@ -25,6 +25,7 @@ public class GoodsInfoManager : MonoBehaviour
 
         goodsinfo.Add(LayerType.cupgray, "Zhizhou,10001");
         goodsinfo.Add(LayerType.cupgreen, "Zhizhou,10001");
+
     }
 
     // Update is called once per frame

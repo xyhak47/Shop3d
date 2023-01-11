@@ -31,7 +31,7 @@ public class FPSCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CameraViewPreset.Instance.lock_camera) return;
+        //if (CameraViewPreset.Instance.lock_camera) return;
 
 
 #if UNITY_EDITOR || UNITY_STANDALONE_WIN
