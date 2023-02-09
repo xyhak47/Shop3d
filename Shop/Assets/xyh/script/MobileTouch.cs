@@ -11,7 +11,7 @@ public class MobileTouch : MonoBehaviour
         Instance = this;
     }
 
-    private float rotateSpeed = 5;
+    private float rotateSpeed = 2;
 
                           
 

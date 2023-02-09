@@ -79,7 +79,7 @@ public class SpriteLayerManager : MonoBehaviour
     {
         List_SpriteLayer.ForEach(l => l.layer.SetActive(l.type == layer));
 
-        SpriteLayer backlayer = List_SpriteLayer.Find(l => l.type == LayerType.back);
-        backlayer.layer.SetActive(layer != LayerType.main);
+        //SpriteLayer backlayer = List_SpriteLayer.Find(l => l.type == LayerType.back);
+        //backlayer.layer.SetActive(layer != LayerType.main);
     }
 }
