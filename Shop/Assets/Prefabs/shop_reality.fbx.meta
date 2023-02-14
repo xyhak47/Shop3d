@@ -3,77 +3,7 @@ guid: 8e511e306e5323b48812a5b558109628
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat
-    second: {fileID: 2100000, guid: 673c5bc881ec7294091e280959e063d1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat.2
-    second: {fileID: 2100000, guid: f8ca4e81e11ddb74892331a471eed534, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat.3
-    second: {fileID: 2100000, guid: 9d9c369098b22434284995f0e3b533cc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat.4
-    second: {fileID: 2100000, guid: 8c4e09c18d3eaf7488b26e771c29dce6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mat.5
-    second: {fileID: 2100000, guid: 5991486dcee74c74da9987afa6a44374, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: black
-    second: {fileID: 2100000, guid: 35b46745040b8f14c94f1a806be9825f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: gold
-    second: {fileID: 2100000, guid: 8d4fa180c7275944e9778792fb07d846, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ground
-    second: {fileID: 2100000, guid: 80ba3796d8624104e9a95664ef1fda4e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ground of carpet
-    second: {fileID: 2100000, guid: c0cdc00a09d8aee4d851a7a2ff6330d8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light around white
-    second: {fileID: 2100000, guid: bd0f6f3009364f94aae09933047d5141, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: light strip white
-    second: {fileID: 2100000, guid: 8341799cd8670a94f8defc72cf24fff4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wall
-    second: {fileID: 2100000, guid: e7735f2dbcb2ce048a157c5eb2525afc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wall.21
-    second: {fileID: 2100000, guid: 03595f0ef0be9c64c8ddb1ac443d25b5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: white
-    second: {fileID: 2100000, guid: 256f659962f454843a90685c019731ce, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
